@@ -55,8 +55,8 @@ def profile():
         "full_name": "Ayesha Rowe",
         "username": "AyeshaRowe",
         "location": "St. Catherine, Jamaica",
-        "date_joined": format_date_joined(datetime.date(2020, 1, 1)),  # Pass a date
-        "bio": "My name is Ayesha Rowe and I am a computer science student working on multiple software projects like FastPres and PanForge. I like playing card games like Uno. Outside of school and games, I have a dog named Oreo and enjoy sweet and spicy foods like ice cream and sweet and spicy chicken.",  # <-- Comma added here
+        "date_joined": format_date_joined(datetime.date(2020, 1, 1)), 
+        "bio": "My name is Ayesha Rowe and I am a computer science student working on multiple software projects like FastPres and PanForge. I like playing card games like Uno. Outside of school and games, I have a dog named Oreo and enjoy sweet and spicy foods like ice cream and sweet and spicy chicken.", 
         "posts": 7,
         "following": 100,
         "followers": 250
