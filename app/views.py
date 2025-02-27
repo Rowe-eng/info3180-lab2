@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
-
+import datetime
 
 ###
 # Routing for your application.
@@ -45,3 +45,23 @@ def add_header(response):
 def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
+
+def format_date_joined(date):
+    return "Joined " + date.strftime("%B, %Y")
+
+@app.route('/profile')
+def profile():
+    user = {
+        "full_name": "Ayesha Rowe",
+        "username": "AyeshaRowe",
+        "location": "St. Catherine, Jamaica",
+        "date_joined": format_date_joined(datetime.date(2020, 1, 1)),  # Pass a date
+        "bio": "My name is Ayesha Rowe and I am a computer science student working on multiple software projects like FastPres and PanForge. I like playing card games like Uno. Outside of school and games, I have a dog named Oreo and enjoy sweet and spicy foods like ice cream and sweet and spicy chicken.",  # <-- Comma added here
+        "posts": 7,
+        "following": 100,
+        "followers": 250
+    }
+    
+    return render_template('profile.html', user=user)
+
+

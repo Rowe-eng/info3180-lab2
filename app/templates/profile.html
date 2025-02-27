@@ -1,0 +1,41 @@
+
+{% extends "base.html" %}
+
+{% block main %}
+<section class="profile-container">
+    <!-- Pink Header Section -->
+    <div class="profile-header">
+        <img src="{{ url_for('static', filename='ARowe.jpg') }}" alt="Profile Picture">
+        <h1>Ayesha Rowe</h1>
+        <h4>@AyeshaRowe</h4>
+        <h4>St. Catherine, Jamaica</h4>
+        <h4>{{ user.date_joined }}</h4>
+    </div>
+
+    <p class="bio">
+       My name is Ayesha Rowe and I am a computer science student working on multiple software project like FastPres and PanForge. I like playing card games like uno. Outside of school and games, I have a dog named Oreo and enjoy sweet and spicy foods like ice cream and sweet and spicy chicken.
+    </p>
+
+    <div class="profile-details">
+        <!-- Stats (Centered) -->
+        <div class="stats">
+            <ul>
+                <li>
+                    <p class="val">{{ user.posts }}</p>
+                    <p class="name">Posts</p>
+                </li>
+                <li>
+                    <p class="val">{{ user.following }}</p>
+                    <p class="name">Following</p>
+                </li>
+                <li>
+                    <p class="val">{{ user.followers }}</p>
+                    <p class="name">Followers</p>
+                </li>
+            </ul>
+        </div>
+
+        <button class="follow-btn">Follow</button>
+    </div>
+</section>
+{% endblock %}
